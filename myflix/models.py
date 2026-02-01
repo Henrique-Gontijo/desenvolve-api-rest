@@ -23,3 +23,8 @@ class Stream(models.Model):
 
     def __str__(self):
         return self.code
+
+class List(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    stream = models.ForeignKey(Stream, on_delete=models.CASCADE)
+

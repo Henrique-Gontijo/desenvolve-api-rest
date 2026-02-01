@@ -1,5 +1,5 @@
 from django.contrib import admin
-from myflix.models import User, Stream
+from myflix.models import User, Stream, List
 
 class Users(admin.ModelAdmin):
     list_display = ('id', 'name', 'email', 'cpf', 'birth_date', 'cell_phone')
@@ -15,3 +15,9 @@ class Streams(admin.ModelAdmin):
     search_fields = ('code', 'description')
 
 admin.site.register(Stream, Streams)
+
+class Lists(admin.ModelAdmin):
+    list_display = ('id', 'user', 'stream')
+    list_display_links = ('id',)
+
+admin.site.register(List, Lists)

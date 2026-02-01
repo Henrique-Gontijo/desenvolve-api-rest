@@ -17,11 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from myflix.views import UserViewSet, StreamViewSet
+from myflix.views import UserViewSet, StreamViewSet, ListViewSet
 
 router = routers.DefaultRouter()
 router.register('users', UserViewSet, basename='users')
 router.register('streams', StreamViewSet, basename='streams')
+router.register('lists', ListViewSet, basename='lists')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
