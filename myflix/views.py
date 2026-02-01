@@ -1,11 +1,11 @@
-from django.shortcuts import render
-from django.http import JsonResponse
+from rest_framework import viewsets
+from myflix.models import User, Stream
+from myflix.serializers import UserSerializer, StreamSerializer
 
-def users(request):
-    if request.method == 'GET':
-        user = {
-            'id': 1,
-            'name': 'José'
-        }
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
-    return JsonResponse(user, json_dumps_params={'ensure_ascii': False})
+class StreamViewSet(viewsets.ModelViewSet):
+    queryset = Stream.objects.all()
+    serializer_class = StreamSerializer

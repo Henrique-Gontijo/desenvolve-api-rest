@@ -9,4 +9,4 @@ class UserSerializer(serializers.ModelSerializer):
 class StreamSerializer(serializers.ModelSerializer):
     class Meta:
         model = Stream
-        fiels = '__all__'
+        fields = '__all__'
