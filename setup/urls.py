@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from myflix.views import UserViewSet, StreamViewSet, ListViewSet
+from myflix.views import UserViewSet, StreamViewSet, ListViewSet, ListUser, ListStream
 
 router = routers.DefaultRouter()
 router.register('users', UserViewSet, basename='users')
@@ -26,5 +26,7 @@ router.register('lists', ListViewSet, basename='lists')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include(router.urls))
+    path('',include(router.urls)),
+    path('users/<int:pk>/lists/', ListUser.as_view()),
+    path('streams/<int:pk>/lists/', ListStream.as_view()),
 ]
