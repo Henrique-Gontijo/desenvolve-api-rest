@@ -4,7 +4,7 @@ class User(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(blank=False, max_length=50)
     cpf = models.CharField(max_length=11)
-    birthday = models.DateField()
+    birth_date = models.DateField()
     cell_phone = models.CharField(max_length=14)
 
     def __str__(self):

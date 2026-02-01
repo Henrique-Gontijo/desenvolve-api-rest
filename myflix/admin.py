@@ -2,7 +2,7 @@ from django.contrib import admin
 from myflix.models import User, Stream
 
 class Users(admin.ModelAdmin):
-    list_display = ('id', 'name', 'email', 'cpf', 'birthday', 'cell_phone')
+    list_display = ('id', 'name', 'email', 'cpf', 'birth_date', 'cell_phone')
     list_display_links = ('id', 'name')
     list_per_page = 20
     search_fields = ('name',)
